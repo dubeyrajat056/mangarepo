@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= manga.title %> - Manga Reader</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">MangaReader</a>
+            <div class="search-container">
+                <form action="/search" method="get">
+                    <input type="text" name="q" placeholder="Search manga...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="nav-links">
+                <a href="/"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-bookmark"></i> Bookmarks</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="manga-detail">
+        <div class="container">
+            <div class="manga-info">
+                <img src="<%= manga.thumbnail %>" alt="<%= manga.title %>" class="manga-cover">
+                <div class="manga-meta">
+                    <h1><%= manga.title %></h1>
+                    <p><strong>Author:</strong> <%= manga.author %></p>
+                    <p><strong>Status:</strong> <%= manga.status %></p>
+                </div>
+            </div>
+            
+            <div class="manga-description">
+                <h2>Description</h2>
+                <p><%= manga.description %></p>
+            </div>
+            
+            <div class="chapters-list">
+                <h2>Chapters</h2>
+                <ul>
+                    <% manga.chapters.forEach(chapter => { %>
+                        <li>
+                            <a href="/chapter/<%= chapter.id %>">
+                                <%= chapter.title %>
+                            </a>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>MangaReader</h3>
+                <p>Your ultimate manga reading experience</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Latest</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 MangaReader. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= isHome ? 'Manga Reader' : 'Search: ' + searchQuery %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">MangaReader</a>
+            <div class="search-container">
+                <form action="/search" method="get">
+                    <input type="text" name="q" placeholder="Search manga..." value="<%= searchQuery %>">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="<%= isHome ? 'active' : '' %>"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-bookmark"></i> Bookmarks</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <% if (mangaList.length === 0) { %>
+            <div class="no-results">
+                <h2>No manga found for "<%= searchQuery %>"</h2>
+                <p>Try a different search term</p>
+            </div>
+        <% } else { %>
+            <h2 class="page-title"><%= isHome ? 'Trending Manga' : 'Search Results for: ' + searchQuery %></h2>
+            <div class="manga-grid">
+                <% mangaList.forEach(manga => { %>
+                    <a href="/manga/<%= manga.id %>" class="manga-card">
+                        <div class="thumbnail-container">
+                            <img src="<%= manga.thumbnail %>" alt="<%= manga.title %>" class="thumbnail">
+                        </div>
+                        <h3><%= manga.title %></h3>
+                    </a>
+                <% }); %>
+            </div>
+        <% } %>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>MangaReader</h3>
+                <p>Your ultimate manga reading experience</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Latest</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 MangaReader. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>
