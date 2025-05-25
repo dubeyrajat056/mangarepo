@@ -415,4 +415,43 @@ a {
     }
 }
 
+
+
+/* Mobile Responsive Navbar (stack items vertically) */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .search-container form {
+        display: flex;
+        width: 100%;
+    }
+
+    .search-container input {
+        flex: 1;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 0.5rem 0;
+        color: #ccc;
+        border-top: 1px solid #333;
+    }
+}
+
+
 /* chapter css end */
