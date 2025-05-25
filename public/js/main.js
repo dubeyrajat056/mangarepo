@@ -63,3 +63,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+
+
+// chapter js str
+document.addEventListener('DOMContentLoaded', () => {
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+
+    function showPage(index) {
+        pages.forEach((page, i) => {
+            page.style.display = i === index ? 'block' : 'none';
+        });
+        document.getElementById('page-indicator').textContent = `Page ${index + 1} of ${pages.length}`;
+    }
+
+    document.getElementById('prev-page').addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    });
+
+    document.getElementById('next-page').addEventListener('click', () => {
+        if (currentPage < pages.length - 1) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    });
+
+    showPage(currentPage); // Initialize view
+});
+
+// chapter js end

@@ -231,3 +231,188 @@ main {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
 }
+
+
+
+
+
+
+/* chapter css str */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1e1e2f;
+    padding: 1rem 0;
+    color: #fff;
+}
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .nav-links a {
+    margin-left: 1.5rem;
+    color: #ccc;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.navbar .nav-links a:hover {
+    color: #fff;
+}
+.search-container input {
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    border: none;
+}
+.search-container button {
+    padding: 0.5rem 0.8rem;
+    background-color: #3e3e60;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.search-container button:hover {
+    background-color: #5a5a90;
+}
+
+/* Main Chapter Viewer */
+.chapter-viewer {
+    padding: 2rem 0;
+}
+.chapter-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.chapter-header h1 {
+    font-size: 2rem;
+    color: #222;
+}
+.chapter-header h2 {
+    font-size: 1.4rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Chapter Controls */
+.chapter-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+.chapter-controls button {
+    background-color: #1e1e2f;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.chapter-controls button:hover {
+    background-color: #3a3a5f;
+}
+#page-indicator {
+    font-weight: bold;
+}
+
+/* Page Container */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page {
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.page img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    background-color: #1e1e2f;
+    color: #fff;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+.footer-section ul {
+    list-style: none;
+}
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+.footer-section ul li a {
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+.footer-section ul li a:hover {
+    color: #fff;
+}
+.footer p {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar .container,
+    .chapter-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .footer .container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+/* chapter css end */
