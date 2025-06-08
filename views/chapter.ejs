@@ -32,11 +32,7 @@
                 <h2><%= chapter.title %></h2>
             </div>
             
-            <div class="chapter-controls">
-                <button id="prev-page"><i class="fas fa-arrow-left"></i> Previous</button>
-                <span id="page-indicator">Page 1 of <%= chapter.pages.length %></span>
-                <button id="next-page">Next <i class="fas fa-arrow-right"></i></button>
-            </div>
+            
             
             <div class="page-container">
                 <% chapter.pages.forEach(page => { %>
@@ -44,6 +40,12 @@
                         <img src="<%= page.url %>" alt="Page <%= page.number %>">
                     </div>
                 <% }); %>
+            </div>
+
+            <div class="chapter-controls">
+                <button id="prev-page"><i class="fas fa-arrow-left"></i> Previous</button>
+                <span id="page-indicator">Page 1 of <%= chapter.pages.length %></span>
+                <button id="next-page">Next <i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
     </main>
